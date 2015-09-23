@@ -1,5 +1,5 @@
 if GetObjectName(myHero) ~= "Braum" then return end
-PrintChat("ShivAIO | Braum v1.0, GoS/F7 version")
+PrintChat("ShivAIO | Braum v1.1, GoS/F7 version")
 BraumMenu = Menu("Braum", "Braum")
 BraumMenu:SubMenu("Combo", "Combo")
 BraumMenu.Combo:Boolean("Q", "Use Q", true)
@@ -19,14 +19,20 @@ BraumMenu.Autolevel:Boolean("Autolvl", "Auto level", false)
 
 
 OnLoop(function(myHero)
+
 for _, ally in pairs(GoS:GetAllyHeroes()) do
 if CanUseSpell(myHero, _W) and BraumMenu.Combo.sbm:Value() and GoS:GetDistance(myHero, ally) <= 650 and IsObjectAlive(ally) and ally ~= myHero then
 			CastTargetSpell(ally, _W)
-			elseif CanUseSpell(myHero, _W) and BraumMenu.Combo.sbm:Value() and GoS:AlliesAround(GoS:myHeroPos(), 800) == 0 then
-			CastTargetSpell(myHero, _W)
+					end
 					end
 					
-        end
+for i, minion in pairs(GoS:GetAllMinions(MINION_ALLY)) do
+if CanUseSpell(myHero, _W) and BraumMenu.Combo.sbm:Value() and GoS:GetDistance(myHero, minion) <= 650 and IsObjectAlive(minion) and GoS:AlliesAround(GoS:myHeroPos(), 650) == 0 then
+			CastTargetSpell(minion, _W)
+			elseif GoS:GetDistance(myHero, minion) > 650 and BraumMenu.Combo.sbm:Value() and GoS:AlliesAround(GoS:myHeroPos(), 650) == 0
+			then CastTargetSpell(myHero, _W)
+					end
+					end
 
 local spacepress = KeyIsDown(0x20) --F7 OrbWalker is ON
 if spacepress then
