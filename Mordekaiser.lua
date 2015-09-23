@@ -1,5 +1,5 @@
 if GetObjectName(myHero) ~= "Mordekaiser" then return end
-PrintChat("Misery Loves Company by Shiv loaded, v1.2, GoS/F7 version")
+PrintChat("ShivAIO | Mordekaiser, v1.2, GoS/F7 version")
 MordekaiserMenu = Menu("Mordekaiser", "Mordekaiser")
 MordekaiserMenu:SubMenu("Combo", "Combo")
 MordekaiserMenu.Combo:Boolean("Q", "Use Q", true)
