@@ -70,7 +70,7 @@ if CanUseSpell(myHero, _W) and BraumMenu.Combo.sbm:Value() and GoS:GetDistance(m
 local spacepress = KeyIsDown(0x20) --F7 OrbWalker is ON
 if spacepress then
 local target = GetCurrentTarget()
-local Qprediction = GetPredictionForPlayer(GoS:myHeroPos(),target,GetMoveSpeed(target),1050,300,1000,80,true,true)
+local Qprediction = GetPredictionForPlayer(GoS:myHeroPos(),target,GetMoveSpeed(target),1150,300,1000,80,true,true)
 local Rprediction = GetPredictionForPlayer(GoS:myHeroPos(),target,GetMoveSpeed(target),750,1000,1250,120,false,true)
       
 if CanUseSpell(myHero, _Q) == READY and BraumMenu.Combo.Q:Value() and GoS:ValidTarget(target, 1000) and Qprediction.HitChance == 1 then
