@@ -1,5 +1,5 @@
 if GetObjectName(myHero) ~= "Mordekaiser" then return end
-PrintChat("ShivAIO | Mordekaiser, v1.2, GoS/F7 version")
+PrintChat("ShivAIO | Mordekaiser, v1.3a, GoS/F7 version")
 MordekaiserMenu = Menu("Mordekaiser", "Mordekaiser")
 MordekaiserMenu:SubMenu("Combo", "Combo")
 MordekaiserMenu.Combo:Boolean("Q", "Use Q", true)
@@ -35,7 +35,7 @@ local spacepress = KeyIsDown(0x20) --F7 OrbWalker is ON
 if spacepress then
 	local target = GetCurrentTarget()
       
-	  if CanUseSpell(myHero, _Q) == READY and MordekaiserMenu.Combo.Q:Value() and GoS:ValidTarget(target, 250) then
+	  if CanUseSpell(myHero, _Q) == READY and MordekaiserMenu.Combo.Q:Value() and GoS:ValidTarget(target, 200) then
       CastSpell(_Q)
       end
 	  
